@@ -1,0 +1,7 @@
+create_clock -name CLK -period 1000 [get_ports clk]
+set_input_delay 5 -clock CLK [get_ports rst_n] 
+set_output_delay 5 -clock CLK [get_ports pc_out] 
+set_output_delay 5 -clock CLK [get_ports alu_result] 
+set_input_transition 0.1 [get_ports rst_n]
+set_load 0.1 [get_ports pc_out]
+set_load 0.1 [get_ports alu_result]
